@@ -19,10 +19,9 @@ def main():
         #prints the input
         print("user input", ui)
     else:
-        sys.exit("plese follow the following font:'figlet -f [font name]'")
+        sys.exit("plese follow the following font:'figlet -f [font name]' (font example can be founded in figlet)")
 
     #prints to the user.
     print("Output:\n", pyfiglet.figlet_format(ui , font = ifont))
 
 main()
-#sys.exit("Invalid Font.")

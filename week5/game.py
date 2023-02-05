@@ -12,7 +12,9 @@ def main():
         except:
             continue
         if right == 0:
-            right = random.randint(1, level)
+            upperBound = 10 ** level
+            lowerBound = int(upperBound / 10)
+            right = random.randint(lowerBound, upperBound)
 
         if num > right:
             print("too big")
