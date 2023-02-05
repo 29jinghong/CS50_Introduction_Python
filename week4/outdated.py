@@ -38,7 +38,6 @@ def main():
                     print("there is a vlaue error, that occur")
                 break
             except ValueError:
-                pass
                 print("there is a vlaue error, that occur")
-
+                pass
 main()            
