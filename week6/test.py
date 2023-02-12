@@ -1,9 +1,8 @@
-def test(num, output):
-    try:
-        assert(num == output)
-        print("True")
-    except AssertionError:
-        print("False")
+x = ["a", "e", "i", "o", "u"]
 
-test(2,3)
-test(2,2)
+word = "lovely"
+for letter in x:
+    if letter in word:
+        print(letter)
+    else:
+        print("pass")
