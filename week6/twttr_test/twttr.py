@@ -8,5 +8,6 @@ def check(words):
     for word in words:
         if word.lower() in aferbet:
             a_word = words.replace(word.lower(), "")
-    return a_word
+    pword = words
+    return a_word , pword
 

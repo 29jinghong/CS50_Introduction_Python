@@ -16,7 +16,9 @@ def main():
 
 def check_is_valid(s):
     plate = plates.is_valid(s)
+
     answer = False
+    
     length = len(s)
     if length > 1 and length < 7:
         for letters in s:
