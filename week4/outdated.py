@@ -14,6 +14,7 @@ months = [
 ]
 
 def main():
+    print("Format: September 8, 1636 || 9/8/1636")
     while True:
         Rdate =  input("Date: ").strip()
         if "/" in Rdate:
@@ -33,6 +34,7 @@ def main():
                 #just doing extra step to clear things
                 if len(DM) == 2:
                     day, month, year = DM[1], months.index(DM[0]) + 1, date[1]
+                    year = year.title()
                     print(f"{year}-{month:02}-{day:02}")
                 else:
                     print("there is a vlaue error, that occur")
