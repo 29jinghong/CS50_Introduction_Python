@@ -1,24 +1,25 @@
 import twttr
 def main():
-    shorten("number")
-    shorten("assets")
-    shorten("food")
-    shorten("aeiouw")
-    shorten("aa")
-    shorten("eeeeeeeuuuuuuiiiiiiooooaaaa")
-    shorten("0a")
+    assert shorten("number", "numbr")
+    assert shorten("assets", "assts")
+    assert shorten("food", "fd")
+    assert shorten("aeiouw", "aeiow")
+    assert shorten("aa", "")
+    assert shorten("eeeeeeeuuuuuuiiiiiiooooaaaa", "eeeeeeeuuuuuuiiiiiioooo")
+    assert shorten("0a", "0")
 
 
 
-def shorten(word):
+def shorten(word, answer):
     checked = twttr.check(word)
-    print("checking:", word)
-    list = ["a", "e", "i", "o", "u"]
-    for letter in list:
-        if letter in checked:
-            print("letter", letter, "failed")
-        else:
-            print("letter", letter, "pass")
+
+    if checked == answer:
+        print('"' + word + '"',"PASSED")
+        return True
+    else:
+        print('"' + word + '"',"FAILED")
+        return False
+    
 
 if __name__ == "__main__":
     main()

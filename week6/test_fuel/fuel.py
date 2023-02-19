@@ -3,8 +3,7 @@ def main():
         print("End program by Entering nothing")
         fuel = input("Fraction: ")
         end = convert(fuel)
-        if end == 1 or 2 or 3:
-            break
+        print(end)
 
 def convert(fuel):
         try:
@@ -14,23 +13,21 @@ def convert(fuel):
             if num <= div:
                 f = (round(num / div * 100))
         except ValueError or ZeroDivisionError:
-            print("ValueError or ZeroDivisionEroor")
-            return 3
+            return "ValueError or ZeroDivisionEroor"
         try:
             if f == None:
                 raise
                 Exception
             if f <= 1:
-                print("E")
-                return 1
+                return "E"
             elif f >= 99:
-                print("F")
-                return 1
+                return "F"
             else:
-                print(f"{f}%")
-                return 1
+                return str(f) + "%"
         except Exception:
             print("Program ended")
-            return 2
+            return "divider less than divided, expected:(3/4)"
 
-main()
+if __name__ == "__main__":
+    main()
+    

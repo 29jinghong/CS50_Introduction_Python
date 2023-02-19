@@ -1,59 +1,30 @@
 import plates
 
 def main():
-    check_is_valid("CS50")
-    check_is_valid("CS05")
-    check_is_valid("CS50P")
-    check_is_valid("PI3.14")
-    check_is_valid("H")
-    check_is_valid("OUTATIME")
-    check_is_valid("0")
-    check_is_valid("!")
-    check_is_valid("qwer")
-    check_is_valid("00000000000")
-    check_is_valid("loser")
-    check_is_valid("Jinghong29")
+    assert check_is_valid("CS50", True)
+    assert check_is_valid("CS05", False)
+    assert check_is_valid("CS50P", True)
+    assert check_is_valid("PI3.14", False)
+    assert check_is_valid("H", False)
+    assert check_is_valid("OUTATIME", False)
+    assert check_is_valid("0", False)
+    assert check_is_valid("!", False)
+    assert check_is_valid("qwer", True)
+    assert check_is_valid("00000000000", False)
+    assert check_is_valid("loser", True)
+    assert check_is_valid("Jinghong29", False)
+    print("all test case passed")
 
-def check_is_valid(s):
-    plate = plates.is_valid(s)
-
-    answer = False
+def check_is_valid(word, answer):
+    plate = plates.is_valid(word)
     
-    length = len(s)
-    if length > 1 and length < 7:
-        for letters in s:
-            if not s.isalnum():
-                break
-
-            if s[0:2].isalpha():
-                middle = s[1:-1]
-                if middle.isnumeric() and middle.find(0):
-                    break
-
-                zeroIndex = s.find("0") - 1
-
-                if s[-(zeroIndex)].isdigit():
-                    for x in s:
-                        if x.isdigit():
-                            if x.startswith('0'):
-                                answer = False
-                            else:
-                                answer = True
-
-                if s[-2].isdigit() and s[-1].isalpha():
-                    break
-                elif s[-2].isdigit():
-                    answer =  True
-                elif s.isalpha():
-                    answer = True
-
-    else:
-        answer = False
-
     if plate == answer:
-        print('"' + s + '"',"PASSED")
+        print('"' + word + '"',"PASSED")
+        return True
     else:
-        print('"' + s + '"',"FAILED")
+        print('"' + word + '"',"FAILED")
+        return False
+    
 
 if __name__ == "__main__":
     main()
