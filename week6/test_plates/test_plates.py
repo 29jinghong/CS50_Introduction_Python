@@ -17,7 +17,8 @@ def main():
 
 def check_is_valid(word, answer):
     plate = plates.is_valid(word)
-    
+    print(plate)
+    print(answer)
     if plate == answer:
         print('"' + word + '"',"PASSED")
         return True

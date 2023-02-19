@@ -10,12 +10,12 @@ def is_valid(plate):
     if length > 1 and length < 7:
         for letters in plate:
             if not plate.isalnum():
-                break
+                return False
 
             if plate[0:2].isalpha():
                 middle = plate[1:-1]
                 if middle.isnumeric() and middle.find(0):
-                    break
+                    return False
 
                 zeroIndex = plate.find("0") - 1
 

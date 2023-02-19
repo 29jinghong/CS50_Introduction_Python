@@ -1,12 +1,14 @@
 import twttr
 def main():
-    assert shorten("number", "numbr")
-    assert shorten("assets", "assts")
+    assert shorten("number", "nmbr")
+    assert shorten("assets", "ssts")
     assert shorten("food", "fd")
-    assert shorten("aeiouw", "aeiow")
+    assert shorten("aeiouw", "w")
     assert shorten("aa", "")
-    assert shorten("eeeeeeeuuuuuuiiiiiiooooaaaa", "eeeeeeeuuuuuuiiiiiioooo")
+    assert shorten("eeeeeeeuuuuuuiiiiiiooooaaaa", "")
     assert shorten("0a", "0")
+    print("all test case passed")
+
 
 
 

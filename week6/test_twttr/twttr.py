@@ -7,8 +7,8 @@ def check(words):
     aferbet = ["a", "e", "i", "o", "u"]
     for word in words:
         if word.lower() in aferbet:
-            a_word = words.replace(word.lower(), "")
-    return a_word
+            words = words.replace(word.lower(), "")
+    return words
 
 if __name__ == "__main__":
     main()
