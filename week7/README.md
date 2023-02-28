@@ -100,3 +100,6 @@ images[0].save(
 )
 ```
 Notice that we import the Image functionality from PIL. Notice that the first for loop simply loops through the images provided as command-line arguments and stores theme into the list called images. The 1: starts slicing argv at its second element. The last lines of code saves the first image and also appends a second image to it as well, creating an animated gif. Typing python costumes.py costume1.gif costume2.gif into the terminal. Now, type code costumes.gif into the terminal window, and you can now see an animated GIF.
+
+unit test-push
+and then do week7
