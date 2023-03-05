@@ -1,29 +1,29 @@
 import bank
 
-def main():
-    assert value("How you doing?", "$20")
-    assert value("What's happening?", "$100")
-    assert value("What's up?", "$100")
-    assert value("How's it going?", "$20")
-    assert value("Hello ", "$0")
-    assert value("Hello, Newman", "$0")
-    assert value("How you doing", "$20")
-    assert value("What's happening?", "$100")
-    assert value("hello loser", "$100")
-    assert value("no cap", "$100")
-    assert value("jowrw4qrqwsafcxqrwefsdv", "$100")
-    assert value("0", "$100")
-    print("all test case passed")
+def test_20_dollor():
+    result = "$20"
+    assert bank.check("How you doing?") == result
 
-def value(greeting, answer):
-    checked = bank.check(greeting)
-    print(checked, answer)
-    if checked == answer:
-        print('"' + greeting + '"', "PASSED")
-        return True
-    else:
-        print('"' + greeting+ '"', "FAILED")
-        return False
+    result = "$20"
+    assert bank.check("How's it going?") == result
 
-if __name__ == "__main__":
-    main()
+    result = "$20"
+    assert bank.check("Hi how are you?") == result
+
+def test_0_dollor():
+    result = "$0"
+    assert bank.check("hello") == result
+
+    result = "$0"
+    assert bank.check("hello, Newman") == result
+
+def test_100_dollor():
+    result = "$100"
+    assert bank.check("0") == result
+
+    result = "$100"
+    assert bank.check("whats up") == result
+
+    result = "$100"
+    assert bank.check("qwerqwer") == result
+
