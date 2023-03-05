@@ -1,4 +1,3 @@
-
 import csv
 import sys
 from tabulate import tabulate
@@ -29,7 +28,6 @@ def main():
         sys.exit("File does not exist")
 
     return 0
-
 
 if __name__ == "__main__":
     raise SystemExit(main())
