@@ -2,32 +2,24 @@ import plates
     
 
 def test_normal():
-    result = True
-    assert plates.is_valid("CS50") == result
+    assert plates.is_valid("CS50") == True
 
-    result = False
-    assert plates.is_valid("CS05") == result
+    assert plates.is_valid("CS05") == False
 
-    result = True
-    assert plates.is_valid("CS50P") == result
+    assert plates.is_valid("CS50P") == True
 
-    result = True
-    assert plates.is_valid("loser") == result
+    assert plates.is_valid("loser") == True
 
 def test_with_symble():
-    result = False
-    assert plates.is_valid("PI3.14") == result
+    assert plates.is_valid("PI3.14") == False
 
 def test_one_letter():
-    result = False
-    assert plates.is_valid("Z") == result
+    assert plates.is_valid("Z") == False
 
-    assert plates.is_valid("A") == result
+    assert plates.is_valid("A") == False
 
 def test_number():
-    result = False
-    assert plates.is_valid("0") == result
+    assert plates.is_valid("0") == False
 
 def test_one_symble():
-    result = False
-    assert plates.is_valid("!") == result
+    assert plates.is_valid("!") == False
