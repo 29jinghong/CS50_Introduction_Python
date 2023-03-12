@@ -21,8 +21,7 @@ def test_with_symble():
 def test_one_letter():
     result = False
     assert plates.is_valid("Z") == result
-    
-    result = False
+
     assert plates.is_valid("A") == result
 
 def test_number():
