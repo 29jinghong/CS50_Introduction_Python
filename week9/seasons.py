@@ -3,17 +3,16 @@ import re
 from datetime import date
 from inflect import engine
 
-
 def main():
 # get birthday
     birthday_str = input("Date of Birth: ").strip()
 
     if not validate(birthday_str):
         sys.exit("Invalid date")
-    #uses map to do the job it will return a map object which can be saved as a list
+    #uses map to do the job it will return a map function which can be saved as a list
     year, month, day = map(int, birthday_str.split("-"))
-
-    #this create a date object useing datetime ^3^
+    
+    #this create a date object useing datetime
     birthday = date(year, month, day)
 
     # get today uesing datetime
@@ -22,7 +21,7 @@ def main():
     # get minutes(int) elapsed since birth
     minutes_int = (today - birthday).days * 24 * 60
 
-    # convert minutes(int) to words useing inflect ^4^
+    # convert minutes(int) to words useing inflect
     p = engine()
     minutes_str = p.number_to_words(minutes_int)
     minutes_str = minutes_str.replace('and ', '').capitalize()
